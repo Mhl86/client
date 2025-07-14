@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
+
 const Home = () => {
   const [events, setEvents] = useState([]);
   const [error, setError] = useState("");
@@ -39,12 +41,12 @@ const Home = () => {
                   {new Date(event.date).toLocaleDateString()}
                 </div>
                 <div className="card-actions justify-end">
-                  <a
-                    href={`/events/${event._id}`}
+                  <Link
+                    to={`/events/${event.id}`}
                     className="btn btn-sm btn-primary bg-lime-300 text-black"
                   >
-                    Detiels
-                  </a>
+                    Details
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,16 +10,22 @@ const Navbar = () => {
       <div>
         <button
           onClick={() => navigate("/SignUp")}
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl mr-4"
+          className="btn btn-sm btn-accent mr-4 mt-2 mb-2"
         >
           Rigister
         </button>
         <button
           onClick={() => navigate("/SignIn")}
-          className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl mr-4"
+          className="btn btn-sm btn-accent mr-4 mt-2 mb-2"
         >
           Sign In
         </button>
+        <Link
+          to="/createEvent"
+          className="btn btn-sm btn-accent mr-4 mt-2 mb-2"
+        >
+          Create Events{" "}
+        </Link>
       </div>
     </div>
   );
