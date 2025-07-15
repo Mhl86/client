@@ -22,7 +22,7 @@ const CreateEvent = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      setError("أنت غير مسجل الدخول.");
+      setError("you are not authenticated");
       return;
     }
 
@@ -38,7 +38,7 @@ const CreateEvent = () => {
 
       if (!res.ok) {
         const errData = await res.json();
-        throw new Error(errData.message || "حدث خطأ أثناء إنشاء الحدث");
+        throw new Error(errData.message || "wrong data");
       }
 
       const data = await res.json();
